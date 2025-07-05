@@ -40,22 +40,23 @@ void OnTick()
    double open3 = Open[3];
    double close3 = Close[3];
   
+  if (OrdersTotal()==0)
   
+  {
  
    if (open1>close1 && open2>close2 && open3>close3) //bearish bars detected!
    {
-      OrderSend(NULL,OP_SELL,0.1,Bid,5,300,300);
+       OrderSend(NULL,OP_BUY,0.1,Ask,5,Ask-500*Point,Ask+500*Point);
    }
    
    if (open1<close1 && open2<close2 && open3<close3)//bullish bars detected!")
    {
-      OrderSend(NULL,OP_BUY,0.1,Ask,5,300,300);
+       OrderSend(NULL,OP_SELL,0.1,Bid,5,Bid+500*Point,Bid-500*Point);
    }
    
    
-                
+     }           
    
    
   }
- 
 //+------------------------------------------------------------------+
