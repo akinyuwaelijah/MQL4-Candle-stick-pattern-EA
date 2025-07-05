@@ -44,14 +44,14 @@ void OnTick()
   
   {
  
-   if (open1>close1 && open2>close2 && open3>close3) //bearish bars detected!
-   {
-       OrderSend(NULL,OP_BUY,0.1,Ask,5,Ask-500*Point,Ask+500*Point);
-   }
-   
-   if (open1<close1 && open2<close2 && open3<close3)//bullish bars detected!")
+   if (open1>close1 && open2>close2 && open3>close3) //bearish pattern detected!
    {
        OrderSend(NULL,OP_SELL,0.1,Bid,5,Bid+500*Point,Bid-500*Point);
+   }
+   
+   if (open1<close1 && open2<close2 && open3<close3)//bullish pattern detected!")
+   {
+       OrderSend(NULL,OP_BUY,0.1,Ask,5,Ask-500*Point,Ask+500*Point);
    }
    
    
@@ -59,4 +59,5 @@ void OnTick()
    
    
   }
+ 
 //+------------------------------------------------------------------+
